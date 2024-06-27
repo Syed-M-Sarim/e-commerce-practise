@@ -1,21 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-Commerce</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-commerce Website</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div>
-        <input type="search" id="search" placeholder="Search Products">
-        <input type="range" id="range" min="1" max="50">
-        Price
+  <header>
+    <h1>E-Commerce Store</h1>
+    <div class="filters">
+      <input type="text" id="search-bar" placeholder="Search for products..." onkeyup="searchProducts()">
+      <input type="number" id="min-price" placeholder="Min price" oninput="filterByPrice()">
+      <input type="number" id="max-price" placeholder="Max price" oninput="filterByPrice()">
+      <button onclick="filterProducts('all')">All</button>
+      <button onclick="filterProducts('men\'s clothing')">Men's Clothing</button>
+      <button onclick="filterProducts('women\'s clothing')">Women's Clothing</button>
+      <button onclick="filterProducts('jewelery')">Jewelry</button>
+      <button onclick="filterProducts('electronics')">Electronics</button>
     </div>
-    <div class="container px-5 py-24 mx-auto">
-        <div  id="container" id="flex flex-wrap -m-4"></div>
-    </div>
-    <script src="app.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
+  </header>
+  <main id="product-list">
+  </main>
+  <script src="app.js"></script>
 </body>
 </html>
